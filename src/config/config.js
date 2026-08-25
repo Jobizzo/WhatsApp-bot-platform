@@ -1,5 +1,5 @@
 export const config = {
-  botName: "WhatsApp Bot Platform",
+  botName: "🔥FLAMMES BOT🔥",
   ownerName: "Jobizzo Flammes 🔥",
   prefix: ".",
 
