@@ -21,6 +21,7 @@ export function menu() {
 ┃ 💎 LICENSE
 ┃ • 3-Day Free Trial
 ┃ • Lifetime: KSh 150
-┃
+┃ • .status
+┃ • .license
 ╰━━━━━━━━━━━━━━━━━━━━╯`;
 }
