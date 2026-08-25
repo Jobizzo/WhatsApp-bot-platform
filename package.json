@@ -1,20 +1,15 @@
 {
-  "name": "whatsapp-bot-platform",
-  "version": "1.0.0",
-  "description": "A WhatsApp bot platform",
-  "main": "index.js",
+  "name": "FLAMMES BOT",
+  "version": "0.1.0",
+  "description": "WhatsApp automation platform by Jobizzo Flammes 🔥",
+  "main": "src/index.js",
+  "type": "module",
   "scripts": {
-    "start": "node index.js",
-    "dev": "nodemon index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node src/index.js",
+    "dev": "node --watch src/index.js"
   },
-  "keywords": ["whatsapp", "bot", "platform"],
-  "author": "Jobizzo",
-  "license": "ISC",
-  "dependencies": {
-    "whatsapp-web.js": "^1.25.0"
+  "engines": {
+    "node": ">=20"
   },
-  "devDependencies": {
-    "nodemon": "^3.0.1"
-  }
+  "license": "MIT"
 }
