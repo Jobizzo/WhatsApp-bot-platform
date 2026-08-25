@@ -1,4 +1,4 @@
-# WhatsApp Bot Platform
+# FLAMMES BOT 
 
 A configurable, multi-customer WhatsApp automation platform.
 
