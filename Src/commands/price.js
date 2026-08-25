@@ -1,5 +1,5 @@
 export function price() {
-  return `💎 WHATSAPP BOT PLATFORM
+  return `🔥FLAMMES BOT 🔥 
 
 🆓 FREE TRIAL
 Enjoy 3 days of full access.
