@@ -12,7 +12,8 @@ export function menu() {
 ┃ 👤 ACCOUNT
 ┃ • .status
 ┃ • .license
-┃
+┃ • .price
+|
 ┃ 👥 GROUP
 ┃ • Coming soon...
 ┃
