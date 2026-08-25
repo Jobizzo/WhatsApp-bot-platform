@@ -9,6 +9,10 @@ export function menu() {
 ┃ • .help
 ┃ • .menu
 ┃
+┃ 👤 ACCOUNT
+┃ • .status
+┃ • .license
+┃
 ┃ 👥 GROUP
 ┃ • Coming soon...
 ┃
@@ -18,10 +22,9 @@ export function menu() {
 ┃ ⚙️ AUTOMATION
 ┃ • Coming soon...
 ┃
-┃ 💎 LICENSE
-┃ • 3-Day Free Trial
-┃ • Lifetime: KSh 150
-┃ • .status
-┃ • .license
+┃ 💎 PRICING
+┃ • 3-Day FREE Trial
+┃ • Lifetime — KSh 150
+┃
 ╰━━━━━━━━━━━━━━━━━━━━╯`;
 }
