@@ -37,13 +37,16 @@ export function createCustomer(userId) {
     return existing;
   }
 
+  const now = Date.now();
+
   const customer = {
     userId,
     status: "trial",
-    createdAt: Date.now(),
-    trialStartedAt: Date.now(),
-    trialExpiresAt: Date.now() + (3 * 24 * 60 * 60 * 1000),
-    licenseId: null
+    createdAt: now,
+    trialStartedAt: now,
+    trialExpiresAt: now + (3 * 24 * 60 * 60 * 1000),
+    licenseId: null,
+    trialUsed: true
   };
 
   database.customers.push(customer);
@@ -73,4 +76,4 @@ export function activateLifetime(customer, licenseId) {
   writeDatabase(database);
 
   return database.customers[index];
-    }
+}
