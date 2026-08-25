@@ -5,6 +5,7 @@ import { help } from "../commands/help.js";
 import { status } from "../commands/status.js";
 import { license } from "../commands/license.js";
 import { activate } from "../commands/activate.js";
+import { price } from "../commands/price.js";
 
 export async function handleCommand(
   message,
@@ -36,6 +37,9 @@ export async function handleCommand(
         userId,
         process.env.CURRENT_USER_NUMBER
       );
+
+    case ".price":
+      return price();
 
     default:
       return "❌ Unknown command. Use .menu to see available commands.";
