@@ -2,8 +2,10 @@ import { ping } from "../commands/ping.js";
 import { menu } from "../commands/menu.js";
 import { owner } from "../commands/owner.js";
 import { help } from "../commands/help.js";
+import { status } from "../commands/status.js";
+import { license } from "../commands/license.js";
 
-export async function handleCommand(message) {
+export async function handleCommand(message, userId = "demo-user") {
   const [command] = message.trim().split(/\s+/);
 
   switch (command.toLowerCase()) {
@@ -19,7 +21,13 @@ export async function handleCommand(message) {
     case ".help":
       return help();
 
+    case ".status":
+      return status(userId);
+
+    case ".license":
+      return license(userId);
+
     default:
       return "❌ Unknown command. Use .menu to see available commands.";
   }
-  }
+        }
