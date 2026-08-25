@@ -6,8 +6,7 @@ import {
 function formatTime(ms) {
   const days = Math.floor(ms / (24 * 60 * 60 * 1000));
   const hours = Math.floor(
-    (ms % (24 * 60 * 60 * 1000)) /
-    (60 * 60 * 1000)
+    (ms % (24 * 60 * 60 * 1000)) / (60 * 60 * 1000)
   );
 
   return `${days} day(s), ${hours} hour(s)`;
@@ -31,8 +30,7 @@ export function status(userId) {
 🔥 Jobizzo Flammes`;
   }
 
-  const remaining =
-    customer.trialExpiresAt - Date.now();
+  const remaining = customer.trialExpiresAt - Date.now();
 
   if (remaining <= 0) {
     return `⛔ TRIAL EXPIRED
@@ -50,4 +48,4 @@ Your 3-day free trial has ended.
 ⏳ Remaining: ${formatTime(remaining)}
 
 💎 Lifetime Access: KSh 150`;
-  }
+}
