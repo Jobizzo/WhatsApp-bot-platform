@@ -1,26 +1,19 @@
-import { findCustomer } from "../services/customerService.js";
+import {
+  generateLicense,
+  LIFETIME_PRICE_KES
+} from "../services/licenseService.js";
 
-export function license(userId) {
-  const customer = findCustomer(userId);
+export function license(userId = "demo-user") {
+  const license = generateLicense(userId);
 
-  if (!customer) {
-    return "❌ You don't have a registered account yet.";
-  }
+  return `💎 FLAMMES BOT LICENSE
 
-  if (customer.status !== "lifetime") {
-    return `🔒 No lifetime license found.
+👤 User: ${userId}
+🆔 License: ${license.licenseId}
+📦 Plan: Lifetime
+💰 Price: KSh ${LIFETIME_PRICE_KES}
+✅ Status: Active
 
-Your current plan is: ${customer.status}
-
-💎 Upgrade to lifetime access for KSh 150.`;
-  }
-
-  return `🔑 LIFETIME LICENSE
-
-License ID: ${customer.licenseId}
-Status: 🟢 ACTIVE
-Plan: ♾️ LIFETIME
-Price: KSh 150
-
-👑 Jobizzo Flammes 🔥`;
+🔥 FLAMMES BOT
+👑 Jobizzo Flammes`;
 }
