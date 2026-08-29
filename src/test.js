@@ -7,8 +7,7 @@ const commands = [
   ".owner",
   ".menu",
   ".help",
-  ".status",
-  ".license"
+  ".status"
 ];
 
 for (const command of commands) {

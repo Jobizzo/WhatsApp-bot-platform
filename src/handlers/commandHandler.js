@@ -1,23 +1,53 @@
-export async function commandHandler(req, res) {
-  try {
-    const command = req.body?.command || req.query?.command;
+export async function handleCommand(message, userId = "demo-user") {
+  const command = message.trim().toLowerCase();
 
-    if (!command) {
-      return res.status(400).json({
-        success: false,
-        error: "Command is required"
-      });
-    }
-
-    return res.json({
-      success: true,
-      command,
-      message: "Command received successfully"
-    });
-  } catch (error) {
-    return res.status(500).json({
-      success: false,
-      error: error.message
-    });
+  if (command === ".ping") {
+    return "🏓 FLAMMES BOT: Pong!";
   }
+
+  if (command === ".menu") {
+    return `🔥 FLAMMES BOT MENU
+
+.ping
+.menu
+.owner
+.help
+.status
+
+🆓 FLAMMES BOT — COMPLETELY FREE`;
+  }
+
+  if (command === ".owner") {
+    return "👑 Owner: Jobizzo Flammes";
+  }
+
+  if (command === ".help") {
+    return `🔥 FLAMMES BOT HELP
+
+Available commands:
+
+.ping
+.menu
+.owner
+.help
+.status
+
+🆓 No subscription
+🆓 No payment
+🆓 Completely FREE`;
+  }
+
+  if (command === ".status") {
+    return `🔥 FLAMMES BOT STATUS
+
+🟢 Bot: ONLINE
+🟢 WhatsApp: CONNECTED
+🆓 Access: FREE
+💳 Subscription: NONE
+💰 Payment: NOT REQUIRED
+
+👑 Owner: Jobizzo Flammes`;
+  }
+
+  return "❌ Unknown command. Type .help";
 }

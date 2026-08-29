@@ -1,22 +1,15 @@
 export function help() {
-  return `📚 HELP — 🔥FLAMMES BOT 🔥 
+  return `🔥 FLAMMES BOT HELP
 
-📌 GENERAL
-• .ping
-• .menu
-• .owner
-• .help
+Available commands:
 
-👤 ACCOUNT
-• .status
-• .license
-• .price
+.ping
+.menu
+.owner
+.help
+.status
 
-💎 PLAN
-• 3-Day FREE Trial
-• KSh 150 Lifetime Access
-
-🔥 More features coming soon.
-
-👑 Jobizzo Flammes`;
+🆓 No subscription
+🆓 No payment
+🆓 Completely FREE`;
 }
