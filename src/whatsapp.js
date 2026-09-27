@@ -3,7 +3,6 @@ import makeWASocket, {
   DisconnectReason
 } from "@whiskeysockets/baileys";
 
-import P from "pino";
 import qrcode from "qrcode-terminal";
 
 export async function startWhatsApp() {
@@ -12,7 +11,6 @@ export async function startWhatsApp() {
 
   const sock = makeWASocket({
     auth: state,
-    logger: P({ level: "silent" }),
     printQRInTerminal: false
   });
 
@@ -31,15 +29,22 @@ export async function startWhatsApp() {
     }
 
     if (connection === "close") {
-      const shouldReconnect =
-        lastDisconnect?.error?.output?.statusCode !==
-        DisconnectReason.loggedOut;
+      const statusCode =
+        lastDisconnect?.error?.output?.statusCode;
 
-      console.log("❌ WhatsApp connection closed.");
-
-      if (shouldReconnect) {
-        console.log("🔄 Reconnecting...");
-        startWhatsApp();
+      console.log(
+        "❌ WhatsApp connection closed. Code:",
+        statusCode
+      );
+console.log("🔍 DISCONNECT DETAILS:", lastDisconnect?.error);
+      if (statusCode === DisconnectReason.loggedOut) {
+        console.log(
+          "🚪 WhatsApp logged out. Please authenticate again."
+        );
+      } else {
+        console.log(
+          "⚠️ Connection lost. Restart the bot to reconnect."
+        );
       }
     }
   });
